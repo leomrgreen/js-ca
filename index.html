@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAINY DAYS HOME PAGE</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="nav">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/LOGO.RAINYDAYS.png" alt="" />
+        </a>
+      </div>
+      <a href="checkout.html">
+        <div class="cart">
+          <i id="cartIcon" class="bi bi-cart"></i>
+          <div id="cartAmount">0</div>
+        </div>
+      </a>
+    </div>
+    <div class="banner">
+      <h1>PUSHING THE COMFORT ZONE</h1>
+      Discover the perfect blend of style, comfort and resilience - Rainy <br />
+      Days rain jackets, where every adventure begins with a dry and fearless
+      step
+    </div>
+    <div class="slider">
+      <div id="slides"></div>
+      <button class="buttonz" id="prev"><</button>
+      <button class="buttonz" id="next">></button>
+    </div>
+    <div class="price-sort">
+      <h2>SORT BY</h2>
+      <div class="category-list">
+        <button id="sortLow" class="sortbtn">LOWEST PRICE</button>
+        <button id="sortHigh" class="sortbtn">HIGHEST PRICE</button>
+        <button id="filterMale" class="sortbtn">MALE</button>
+        <button id="filterFemale" class="sortbtn">FEMALE</button>
+        <button id="filterAll" class="sortbtn">ALL</button>
+      </div>
+    </div>
+    <!-- <div id="gridWrapper">
+      <div class="jacketContainer">
+        <div class="jacketImage"></div>
+        <h3>JACKET</h3>
+        <div class="price">125</div>
+      </div>
+    </div> -->
+
+    <div id="displayContainer"></div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
