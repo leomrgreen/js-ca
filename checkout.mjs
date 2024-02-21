@@ -8,13 +8,14 @@ function generateHtmlCart(jacket) {
     itemQuantity.textContent = 'antal: ' + jacket.quantity;
     
     const itemPrice = document.createElement('div');
-    itemPrice.textContent = 'pris ' + jacket.price;
+    itemPrice.textContent = 'pris ' + '$' + jacket.price;
 
     const totalPrice = document.createElement('div');
-    totalPrice.textContent = 'Total: ' + jacket.price * jacket.quantity;
+    totalPrice.textContent = 'Total: ' + '$' + jacket.price * jacket.quantity;
 
     cartWrapper.append(itemTitle, itemQuantity, itemPrice, totalPrice);
     return cartWrapper;
+
 }
 
 function displayCartItems() {
@@ -26,6 +27,7 @@ cart.forEach(function (currentItem) {
     const cartHtml = generateHtmlCart(currentItem);
     cartContainer.appendChild(cartHtml);
 });
+
 }
 
 function main() {

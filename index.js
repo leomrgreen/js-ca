@@ -176,6 +176,7 @@ function addToCart(jacket) {
 
 
 
+
 function generateJacketHtml(jacket) {
     const gridWrapper = document.createElement('div');
     gridWrapper.classList.add('gridWrapper');
