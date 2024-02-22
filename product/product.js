@@ -4,11 +4,12 @@ const productId = params.get('id');
 
 async function fetchProductDetails(productId) {
     try {
-        const response = await fetch(`https://api.noroff.dev/api/v1/rainy-days/${productId}`);
-        const productDetails = await response.json();
+        const response = await fetch(`https://v2.api.noroff.dev/rainy-days/${productId}`);
+        const json = await response.json();
+        const productDetails = json.data;
         displayProductDetails(productDetails);
     } catch (error) {
-        console.error('Error:', error);
+        console.error('ERROR:', error);
     }
 }
 
@@ -17,7 +18,7 @@ if (productId) {
 }
 
 function displayProductDetails(productDetails) {
-    document.getElementById('productImage').src = productDetails.image;
+    document.getElementById('productImage').src = productDetails.image.url;
     document.getElementById('productTitle').textContent = productDetails.title;
     document.getElementById('productPrice').textContent = '$' + productDetails.price;
     document.getElementById('productDescription').textContent = productDetails.description;
