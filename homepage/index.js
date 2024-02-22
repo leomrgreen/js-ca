@@ -148,6 +148,23 @@
 const BASE_API_URL = 'https://v2.api.noroff.dev';
 const API_URL = `${BASE_API_URL}/rainy-days`;
 
+function updateCartQuantity() {
+    const cart = JSON.parse(localStorage.getItem('cart')); 
+    let totalQuantity = 0; 
+
+    cart.forEach(function(jacket) {
+        totalQuantity += jacket.quantity;
+    });
+
+    // the variable totalQuantity will match the total quantity of the objects that are inside of the new cart array
+
+   
+    const cartAmount = document.getElementById('cartAmount');
+    if (cartAmount) {
+        cartAmount.textContent = totalQuantity.toString(); 
+    }
+}
+
 function createCart() {
     const cart = localStorage.getItem('cart');
     if (!cart) {
@@ -156,27 +173,16 @@ function createCart() {
 }
 
 
-function addToCart(jacket) {
-    const cart = JSON.parse(localStorage.getItem('cart'));
-    const itemIndex = cart.findIndex(function (currentJacket) {
-        if (jacket.id === currentJacket.id) {
-            return true;
-        }
-        return false;
-    });
 
-    if (itemIndex === -1) {
-        cart.push({...jacket, quantity: 1});
-    }
-    else {
-        cart[itemIndex].quantity += 1;
-    }
+function addToCart(jacket) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({...jacket, quantity: 1});
     localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartQuantity(); // updates the cart quantity 
 }
 
 
-
-
+// creating HTML by creating divs that are equal to the object's different features 
 function generateJacketHtml(jacket) {
     const gridWrapper = document.createElement('div');
     gridWrapper.classList.add('gridWrapper');
@@ -206,17 +212,17 @@ function generateJacketHtml(jacket) {
 }
 
 
+
 function displayJackets(rainyArray) {
     const displayContainer = document.getElementById('displayContainer');
     rainyArray.forEach(jacket => {
         const jacketHtml = generateJacketHtml(jacket);
-        console.log(jacketHtml);
         displayContainer.appendChild(jacketHtml);
     });
 }
 
 
-async function getArray() {
+async function main() {
     try {
         createCart();
         const response = await fetch(API_URL);
@@ -228,4 +234,6 @@ async function getArray() {
     }
 }
 
-getArray();
+
+
+main();

@@ -47,7 +47,7 @@ body {
 
 
 .banner {
-    background-image: url(images/framsidabanner.jpg);
+    background-image: url(/images/framsidabanner.jpg);
     height: 80vh;
     background-repeat: no-repeat;
     background-size: cover;
