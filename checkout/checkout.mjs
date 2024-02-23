@@ -33,8 +33,21 @@ function removeFromCart(event) {
         localStorage.setItem('cart', JSON.stringify(cart)); 
         event.target.parentElement.remove(); 
     }
+
+    updateCartQuantity();
 }
 
+
+function getCart() {
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    return cart;
+}
+
+function updateCartQuantity() {
+    const cart = getCart();
+    const cartAmount = document.getElementById('cartAmount');
+    cartAmount.textContent = cart.length;
+}
 
 function displayCartItems() {
     const cartContainer = document.getElementById('cartContainer');
@@ -65,6 +78,7 @@ function displayCartItems() {
 
 function main() {
     displayCartItems();
+    updateCartQuantity();
 }
 
 main();

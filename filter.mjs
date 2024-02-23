@@ -1,4 +1,4 @@
-export function sortByLowPrice() {
+function sortByLowPrice() {
     rainyArray.sort((a, b) => {
         return a.price - b.price;
     }); 
@@ -10,13 +10,13 @@ document.getElementById('sortLow').addEventListener('click', function() {
 });
 
 
-export function sortByHighPrice() {
+function sortByHighPrice() {
     rainyArray.sort((a, b) => {
         return b.price - a.price;
     });
 }
 
-export function filterJacketsByGender(gender) {
+function filterJacketsByGender(gender) {
     const filteredArray = rainyArray.filter(item => item.gender === gender);
     main(filteredArray); 
 }

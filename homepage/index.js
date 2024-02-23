@@ -1,20 +1,23 @@
 const BASE_API_URL = 'https://v2.api.noroff.dev';
 const API_URL = `${BASE_API_URL}/rainy-days`;
 
+// function updateCartQuantity() {
+//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+//     const cartAmount = document.getElementById('cartAmount');
+//     cartAmount.textContent = cart.length;
+//     console.log(cartAmount);
+    
+// }
+
+function getCart() {
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    return cart;
+}
+
 function updateCartQuantity() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    let totalQuantity = 0;
-
-    if (cart && cart.length > 0) {
-        cart.forEach(function(jacket) {
-            totalQuantity += jacket.quantity;
-        });
-    }
-
+    const cart = getCart();
     const cartAmount = document.getElementById('cartAmount');
-    if (cartAmount) {
-        cartAmount.textContent = totalQuantity.toString();
-    }
+    cartAmount.textContent = cart.length;
 }
 
 function createCart() {
@@ -81,7 +84,7 @@ function displayJackets(rainyArray) {
 async function main() {
     try {
         createCart();
-        updateCartQuantity;
+        updateCartQuantity();
         const response = await fetch(API_URL);
         const json = await response.json();
         const rainyArray = json.data; 
@@ -90,7 +93,5 @@ async function main() {
         console.error('Error:', error);
     }
 }
-
-
 
 main();
