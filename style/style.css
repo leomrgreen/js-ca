@@ -276,3 +276,7 @@ body {
     background-color: var(--rainygreen);
     padding: 0.5rem;
 }
+
+.bi-trash{
+    font-size: 25px;
+}

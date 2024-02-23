@@ -87,8 +87,8 @@ function generateHtmlCart(jacket) {
     itemPrice.textContent = 'PRICE: ' + '$' + jacket.price;
 
 
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'REMOVE';
+    const removeButton = document.createElement('i');
+    removeButton.className = 'bi bi-trash';
     removeButton.setAttribute('data-id', jacket.id); 
     removeButton.addEventListener('click', removeFromCart);
 
