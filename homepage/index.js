@@ -1,43 +1,8 @@
+import { createCart, updateCartQuantity, addToCart } from "../JS UTIL/cart.mjs";
+
 const BASE_API_URL = 'https://v2.api.noroff.dev';
 const API_URL = `${BASE_API_URL}/rainy-days`;
 
-// function updateCartQuantity() {
-//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     const cartAmount = document.getElementById('cartAmount');
-//     cartAmount.textContent = cart.length;
-//     console.log(cartAmount);
-    
-// }
-
-function getCart() {
-    const cart = JSON.parse(localStorage.getItem('cart'));
-    return cart;
-}
-
-function updateCartQuantity() {
-    const cart = getCart();
-    const cartAmount = document.getElementById('cartAmount');
-    cartAmount.textContent = cart.length;
-}
-
-function createCart() {
-    const cart = localStorage.getItem('cart');
-    if (!cart) {
-        localStorage.setItem('cart', JSON.stringify([]));
-    }
-}
-
-
-
-function addToCart(jacket) {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart.push({...jacket, quantity: 1});
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartQuantity(); // updates the cart quantity 
-}
-
-
-// creating HTML by creating divs that are equal to the object's different features 
 function generateJacketHtml(jacket) {
     const gridWrapper = document.createElement('div');
     gridWrapper.classList.add('gridWrapper');

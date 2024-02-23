@@ -17,10 +17,12 @@
           <img src="/images/LOGO.RAINYDAYS.png" alt="" />
         </a>
       </div>
-      <div class="cart">
-        <i class="bi bi-cart"></i>
-        <div id="cartAmount">0</div>
-      </div>
+      <a href="/checkout">
+        <div class="cart">
+          <i id="cartIcon" class="bi bi-cart"></i>
+          <div id="cartAmount">0</div>
+        </div>
+      </a>
     </div>
     <div class="product-details">
       <img id="productImage" src="" alt="Product Image" />
@@ -28,10 +30,9 @@
         <h2 id="productTitle"></h2>
         <p id="productPrice"></p>
         <p id="productDescription"></p>
-        <button id="backToShop">BACK TO SHOP</button>
+        <button id="addToCartBtn">ADD TO CART</button>
       </div>
     </div>
-
-    <script src="product.js"></script>
+    <script type="module" src="product.js"></script>
   </body>
 </html>

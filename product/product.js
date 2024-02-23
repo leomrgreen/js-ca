@@ -13,14 +13,28 @@ async function fetchProductDetails(productId) {
     }
 }
 
-if (productId) {
-    fetchProductDetails(productId);
+
+
+function displayProductDetails(product) {
+    document.getElementById('productImage').src = product.image.url;
+    document.getElementById('productTitle').textContent = product.title;
+    document.getElementById('productPrice').textContent = '$' + product.price;
+    document.getElementById('productDescription').textContent = product.description;
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    addToCartBtn.textContent = 'ADD TO CART';
+    addToCartBtn.addEventListener('click', () => {
+        addToCart(product);
+    })
 }
 
-function displayProductDetails(productDetails) {
-    document.getElementById('productImage').src = productDetails.image.url;
-    document.getElementById('productTitle').textContent = productDetails.title;
-    document.getElementById('productPrice').textContent = '$' + productDetails.price;
-    document.getElementById('productDescription').textContent = productDetails.description;
+import { updateCartQuantity, addToCart, getCart, createCart } from "../JS UTIL/cart.mjs";
+
+
+function main() {
+    if (productId) {fetchProductDetails(productId);}
+    updateCartQuantity();
+    createCart();
+    getCart();
 }
 
+main();
