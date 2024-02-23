@@ -78,7 +78,7 @@ function generateHtmlCart(jacket) {
     cartJacketImage.src = jacket.image.url;
 
     const itemTitle = document.createElement('h3');
-    itemTitle.textContent = jacket.title;
+    itemTitle.textContent = jacket.title + ' ' + `(${jacket.gender})`
 
     const itemQuantity = document.createElement('div');
     itemQuantity.textContent = 'QTY: ' + jacket.quantity;
