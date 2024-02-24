@@ -56,6 +56,12 @@ export function displayCartItems() {
             totalSum += currentItem.price * currentItem.quantity; 
         });
 
+         // Create a DIV for the new total sum of the cart, .toFixed in order to limit the total sum characters
+        const totalSumDiv = document.createElement('div');
+        totalSumDiv.style.cssText = 'font-weight: bold'
+        totalSumDiv.textContent = 'TOTAL: $' + totalSum.toFixed(2); 
+        cartContainer.appendChild(totalSumDiv); 
+
         const checkOutButton = document.createElement('button');
         checkOutButton.textContent = 'CHECKOUT';
         checkOutButton.addEventListener('click', function(){
@@ -63,11 +69,7 @@ export function displayCartItems() {
         });
 
         cartContainer.appendChild(checkOutButton);
-
-        // Create a DIV for the new total sum of the cart, .toFixed in order to limit the total sum characters
-        const totalSumDiv = document.createElement('div');
-        totalSumDiv.textContent = 'TOTAL: $' + totalSum.toFixed(2); 
-        cartContainer.appendChild(totalSumDiv); 
+       
     }
 }
 

@@ -24,6 +24,16 @@ function generateJacketHtml(jacket) {
 
     const jacketPrice = document.createElement('div');
     jacketPrice.textContent = '$' + jacket.price;
+        if (jacket.onSale === true) {
+            jacketPrice.textContent = '$' + jacket.discountedPrice;
+            jacketPrice.style.cssText = 'color: red; display: flex;'
+            // Calculates the percentages that the client would save if buying on sale
+            const discountPercentage = Math.round(((jacket.price - jacket.discountedPrice) / jacket.price) * 100);
+            const saleBox = document.createElement('div');
+            saleBox.textContent = 'SAVE ' + discountPercentage + '%';
+            saleBox.style.cssText = 'position: relative; margin-left: 12px; color: black; font-weight: bold;'
+            jacketPrice.appendChild(saleBox);
+        }
 
     const addToCartButton = document.createElement('button');
     addToCartButton.classList.add('jacketToCartBtn');

@@ -108,7 +108,20 @@ body {
 }
 
 
+.SALE-PROMO {
+    padding: 1rem;
+    background-color: var(--rainygreen);
+    display: grid;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
 
+.inf {
+    width: min(95%, 70rem);
+    margin-inline: auto;
+}
 
 .jacketContainer button:hover,
 .sortbtn:hover,
@@ -133,7 +146,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
     align-items: center;
     padding: 1rem;
     gap: 1rem;
@@ -234,11 +246,30 @@ body {
 
 #cartContainer {
     display: grid;
+    width: min(95%, 70rem);
     margin-inline: auto;
     justify-content: center;
-    padding-top: 250px;
+    padding-top: 170px;
+    color: var(--rainygreen);
+    gap: 1rem;
+    background-color: white;
+    padding-bottom: 100px;
+}
+
+#cartContainer button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: var(--rainygreen);
     color: white;
-    gap: 2rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#cartContainer button:hover {
+    color: black;
+    background: white;
+    border: #29360c solid 2px;
 }
 
 #cartContainer > div {
@@ -246,7 +277,7 @@ body {
 }
 
 #cartContainer > div > img {
-    max-width: 150px;
+    max-width: 100px;
 }
 
 #checkoutBod {
@@ -279,6 +310,7 @@ body {
 
 .bi-trash{
     font-size: 25px;
+    cursor: pointer;
 }
 
 

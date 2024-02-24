@@ -26,6 +26,11 @@ function displayProductDetails(product) {
     document.getElementById('productImage').src = product.image.url;
     document.getElementById('productTitle').textContent = product.title;
     document.getElementById('productPrice').textContent = '$' + product.price;
+    // Makes sure to display the sale price if jacket on sale is clicked on at home-page
+    if (product.onSale ===true) {
+        document.getElementById('productPrice').textContent = '$' + product.discountedPrice;
+        document.getElementById('productPrice').style.cssText = 'color: red'
+    };
     document.getElementById('productDescription').textContent = product.description;
     const addToCartBtn = document.getElementById('addToCartBtn');
     addToCartBtn.textContent = 'ADD TO CART';

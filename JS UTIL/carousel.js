@@ -28,8 +28,7 @@ function imageCarousel(carouselArray) {
         
         carouselImage.innerHTML = 
         `<img src="${carouselArray[i].image.url}">
-        <h2>${carouselArray[i].title}</h2> 
-        <h3>$${carouselArray[i].price}</h3>`;
+        <h2>${carouselArray[i].title}</h2>`;
         
         carouselImage.setAttribute('class', 'sliderItem');
         slidesContainer.appendChild(carouselImage);
