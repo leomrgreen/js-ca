@@ -1,20 +1,15 @@
-function sortByLowPrice() {
-    rainyArray.sort((a, b) => {
-        return a.price - b.price;
-    }); 
-}
-
 document.getElementById('sortLow').addEventListener('click', function() {
-    sortByLowPrice(); 
-    main(); 
+    sortByLowPrice(rainyArray); 
 });
 
 
-function sortByHighPrice() {
+function sortByHighPrice(rainyArray) {
     rainyArray.sort((a, b) => {
         return b.price - a.price;
     });
 }
+
+
 
 function filterJacketsByGender(gender) {
     const filteredArray = rainyArray.filter(item => item.gender === gender);
@@ -36,6 +31,3 @@ document.getElementById('filterMale').addEventListener('click', function() {
     filterJacketsByGender('Male');
 });
 
-document.getElementById('filterAll').addEventListener('click', function() {
-    main();
-})

@@ -1,15 +1,22 @@
+import { updateCartQuantity, addToCart, getCart, createCart } from "../JS UTIL/cart.mjs";
+import { initializeLoader, hideLoader } from "../JS UTIL/loader.mjs";
+
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 
 
 async function fetchProductDetails(productId) {
     try {
+        initializeLoader();
         const response = await fetch(`https://v2.api.noroff.dev/rainy-days/${productId}`);
         const json = await response.json();
         const productDetails = json.data;
         displayProductDetails(productDetails);
     } catch (error) {
         console.error('ERROR:', error);
+    }
+    finally {
+        hideLoader();
     }
 }
 
@@ -26,8 +33,6 @@ function displayProductDetails(product) {
         addToCart(product);
     })
 }
-
-import { updateCartQuantity, addToCart, getCart, createCart } from "../JS UTIL/cart.mjs";
 
 
 function main() {
