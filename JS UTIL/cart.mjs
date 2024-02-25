@@ -17,22 +17,21 @@ export function createCart() {
 }
 
 export function addToCart(jacket) {
-  // kolla om nödvändigt
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push({ ...jacket, quantity: 1 });
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartQuantity();
 }
 
-function removeFromCart(event) {
-  const idToRemove = event.target.getAttribute("data-id");
+function removeFromCart(jacket) {
+  const idToRemove = jacket.target.getAttribute("data-id");
   let cart = JSON.parse(localStorage.getItem("cart"));
   const indexToRemove = cart.findIndex((item) => item.id == idToRemove);
 
   if (indexToRemove > -1) {
     cart.splice(indexToRemove, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
-    event.target.parentElement.remove();
+    jacket.target.parentElement.remove();
   }
   displayCartItems();
   updateCartQuantity();

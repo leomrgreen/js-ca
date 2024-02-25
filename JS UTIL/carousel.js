@@ -57,7 +57,7 @@ document.getElementById('next').addEventListener('click', function() {
 
 
 document.getElementById('prev').addEventListener('click', function() {
-    currentIndex = (currentIndex - 1 + carouselArray.length) % carouselArray.length;  
+    currentIndex = (currentIndex - 1 + carouselArray.length) % carouselArray.length;  // makes sure we don't get to a undefined currentIndex
     showCurrentImage();
 });
 
