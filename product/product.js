@@ -4,6 +4,7 @@ import { initializeLoader, hideLoader } from "../JS UTIL/loader.mjs";
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
 
+// Matar in unikt ID från sidans homepage
 
 async function fetchProductDetails(productId) {
     try {

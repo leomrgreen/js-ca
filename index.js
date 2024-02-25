@@ -5,7 +5,10 @@ let rainyArray = [];
 const BASE_API_URL = "https://v2.api.noroff.dev";
 const API_URL = `${BASE_API_URL}/rainy-days`;
 
-function generateJacketHtml(jacket) {
+
+// Creates a list of all objects from the fetched data / array 
+
+function generateJacketHtml(jacket) { 
   const gridWrapper = document.createElement("div");
   gridWrapper.classList.add("gridWrapper");
 
@@ -55,6 +58,10 @@ function generateJacketHtml(jacket) {
   return jacketContainer;
 }
 
+
+
+// Sorting and filter functions for different categories 
+
 function sortByLowestPrice() {
   rainyArray.sort((a, b) => a.price - b.price);
   displayJackets(rainyArray);
@@ -95,6 +102,9 @@ function displayJackets(rainyArray) {
   });
 }
 
+
+// data fetch
+
 async function main() {
   try {
     initializeLoader();
@@ -102,7 +112,7 @@ async function main() {
     updateCartQuantity();
     const response = await fetch(API_URL);
     const json = await response.json();
-    rainyArray = json.data;
+    rainyArray = json.data; // allows rainyArray to be handled outside this main function 
     displayJackets(rainyArray);
   } catch (error) {
     console.error("Error:", error);
