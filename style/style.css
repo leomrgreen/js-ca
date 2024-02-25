@@ -21,6 +21,7 @@ body {
     background-color: var(--rainygreen);
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: space-between;
     padding: 10px 2.5rem 10px 2.5rem;
     width: 100vw;
@@ -44,6 +45,8 @@ body {
 #cartAmount {
     font-size: 15px;
 }
+
+
 
 
 .banner {
@@ -156,7 +159,7 @@ body {
     color: var(--rainygreen);
     font-size: 12px;
     font-weight: bold;
-    border: 2px solid --rainygreen;
+    border: 2px solid var(--rainygreen);
     border-radius: 10px;
     padding: 10px 20px 10px 20px;
     cursor: pointer;
@@ -176,6 +179,18 @@ body {
     align-items: center;
     margin-top: 100px;
     padding: 50px;
+    gap: 12px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info button {
+    width: 200px;
+    margin-inline: auto;
 }
 
 #productImage {
@@ -209,16 +224,18 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    gap: 12px;
 }
 
 .jacketContainer button,
 .info button {
-    padding: 0.5rem;
+    padding: 1rem;
     border: none;
     background-color: var(--rainygrey);
     font-weight: bold;
     color: black;
     cursor: pointer;
+    font-size: 15px;
 }
 
 #displayContainer {
@@ -314,3 +331,21 @@ body {
 }
 
 
+footer {
+    height: 150px;
+    background-color: var(--rainygreen);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+footer i {
+    color: white;
+    font-size: 30px;
+}
+
+.foot-content {
+    display: flex;
+    gap: 1.5rem;
+}

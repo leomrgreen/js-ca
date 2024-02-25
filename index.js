@@ -1,10 +1,5 @@
 import { createCart, updateCartQuantity, addToCart } from "./JS UTIL/cart.mjs";
 import { initializeLoader, hideLoader } from "./JS UTIL/loader.mjs";
-import {
-  createWishList,
-  getWishList,
-  addToWishList,
-} from "./JS UTIL/favourite.mjs";
 let rainyArray = [];
 
 const BASE_API_URL = "https://v2.api.noroff.dev";
@@ -49,18 +44,12 @@ function generateJacketHtml(jacket) {
     addToCart(jacket);
   });
 
-  const addToWishListButton = document.createElement("i");
-  addToWishListButton.className = "bi bi-bookmark-heart";
-  addToWishListButton.addEventListener("click", () => {
-    addToWishList(jacket);
-  });
-
   jacketContainer.append(
     jacketImage,
     heading,
     jacketPrice,
     addToCartButton,
-    addToWishListButton
+    
   );
 
   return jacketContainer;
@@ -110,7 +99,6 @@ async function main() {
   try {
     initializeLoader();
     createCart();
-    createWishList();
     updateCartQuantity();
     const response = await fetch(API_URL);
     const json = await response.json();
