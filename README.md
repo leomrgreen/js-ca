@@ -27,5 +27,3 @@ git clone https://github.com/leomrgreen/js-ca.git
 [GitHub](https://github.com/leomrgreen)
 
 [Discord Profile](https://discordapp.com/users/249243279827271680)
-
-
