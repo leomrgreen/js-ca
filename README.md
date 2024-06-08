@@ -6,8 +6,9 @@
 A website built for a fictional company called Rainy Days. All data is fetched from Noroff's API. Read more [here](https://docs.noroff.dev/docs/v2/e-commerce/rainy-days)
 
 ## Built With
-  - [HTML5]
+  - HTML
   - [CSS3](https://www.w3.org/Style/CSS/)
+  - [Vanilla Javascript](https://www.javascript.com/)
 
 ## To run the app, run the following commands:
 
