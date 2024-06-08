@@ -65,7 +65,7 @@ export function displayCartItems() {
     const checkOutButton = document.createElement("button");
     checkOutButton.textContent = "CHECKOUT";
     checkOutButton.addEventListener("click", function () {
-      window.location.href = "/confirmation";
+      window.location.href = "../confirmation";
     });
 
     cartContainer.appendChild(checkOutButton);
